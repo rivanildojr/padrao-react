@@ -1,28 +1,22 @@
-import React from 'react';
-import './App.css';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
 
-function App() {
+import React from 'react';
+
+import store from '../store';
+import {Provider} from 'react-redux';
+
+import Home from '../containers/Home';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 }
-
-export default App;
